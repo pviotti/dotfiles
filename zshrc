@@ -126,5 +126,5 @@ alias recolor="xrandr --output eDP1 --set 'Broadcast RGB' 'Full'"
 #}
 
 # Text files shortcuts
-alias journal="vim ~/docs/journal.md"
-alias notes="vim ~/docs/notes.md"
+alias journal="vim ~/docs/notes/journal.md"
+alias notes="vim ~/docs/notes"
