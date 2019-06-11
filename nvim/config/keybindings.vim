@@ -45,8 +45,8 @@ noremap <silent> <F7> :Gblame<CR>
 noremap <F8> :Autoformat<CR>
 
 " Insert timestamp
-:nnoremap <F3> "=strftime("%Y/%m/%d")<CR>p
-:inoremap <F3> <C-R>=strftime("%Y/%m/%d")<CR>
+:nnoremap <F9> "=strftime("%Y/%m/%d")<CR>p
+:inoremap <F9> <C-R>=strftime("%Y/%m/%d")<CR>
 
 " Replace the word highlighted everywhere
 vnoremap <C-r> "hy:%s/<C-r>h//gc<left><left><left>
