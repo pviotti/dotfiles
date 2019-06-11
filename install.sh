@@ -2,19 +2,22 @@
 
 # Install oh-my-zsh
 sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
-rm ~/.zshrc
+rm -f ~/.zshrc
 
 localDir=$(pwd)
 
-ln -s "$localDir/zshrc" "$HOME/.zshrc"
-ln -s "$localDir/tmux.conf" "$HOME/.tmux.conf"
-ln -s "$localDir/gitconfig" "$HOME/.gitconfig"
-ln -s "$localDir/Xdefaults" "$HOME/.Xdefaults"
-ln -s "$localDir/user-dirs.dirs" "$HOME/.config/user-dirs.dirs"
+ln -fs "$localDir/zshrc" "$HOME/.zshrc"
+ln -fs "$localDir/tmux.conf" "$HOME/.tmux.conf"
+ln -fs "$localDir/gitconfig" "$HOME/.gitconfig"
+ln -fs "$localDir/Xdefaults" "$HOME/.Xdefaults"
+ln -fs "$localDir/user-dirs.dirs" "$HOME/.config/user-dirs.dirs"
 
 # vim
-curl -fLo ~/.vim/autoload/plug.vim --create-dirs \
-    https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
-ln -s "$localDir/vimrc" "$HOME/.vimrc"
-mkdir -p ~/.vim/colors
-ln -s "$localDir/vim-vividchalk.vim" "$HOME/.vim/colors/vividchalk.vim"
+curl -fLo ~/.config/nvim/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+mkdir -p ~/.config/nvim/config
+ln -fs "$localDir/nvim/init.vim" "$HOME/.config/nvim/init.vim"
+ln -fs "$localDir/nvim/config/general.vim" "$HOME/.config/nvim/config/general.vim"
+ln -fs "$localDir/nvim/config/keybindings.vim" "$HOME/.config/nvim/config/keybindings.vim"
+ln -fs "$localDir/nvim/config/language.vim" "$HOME/.config/nvim/config/language.vim"
+ln -fs "$localDir/nvim/config/plugins.vim" "$HOME/.config/nvim/config/plugins.vim"
+ln -fs "$localDir/nvim/config/styles.vim" "$HOME/.config/nvim/config/styles.vim"
