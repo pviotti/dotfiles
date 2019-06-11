@@ -49,6 +49,8 @@ export EDITOR=vim
 # Various CLI shortcuts
 alias restart='sudo shutdown -r now'
 alias poweroff='sudo shutdown -P now'
+alias vi=nvim
+alias vim=nvim
 alias del='gio trash'
 alias o='xdg-open'
 alias l='ls'
