@@ -44,7 +44,7 @@ pass() {
     veracrypt -d
 }
 
-export EDITOR=vim
+export EDITOR=nvim
 
 # Various CLI shortcuts
 alias restart='sudo shutdown -r now'
