@@ -2,9 +2,6 @@
 " Configure Key Bindings
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
-" Map the leader to ,
-map "," <leader>
-
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Faster navigation between splits
 nnoremap <C-J> <C-W><C-J>
@@ -27,13 +24,10 @@ set pastetoggle=<F2>
 noremap <silent> <F3> :NERDTreeToggle<CR>
 
 " Open The CTags Tagbar
-noremap <silent> <F4> :TagbarToggle<CR>
+"noremap <silent> <F4> :TagbarToggle<CR>
 
 " Easy Buffer Switching
 nnoremap <F5> :buffers<CR>:buffer<Space>
-
-" Clear highlighting using space
-noremap <silent> <Space> :noh<CR>
 
 " Set list toggle
 noremap <silent> <F6> :set list!<CR>
@@ -47,6 +41,9 @@ noremap <F8> :Autoformat<CR>
 " Insert timestamp
 :nnoremap <F9> "=strftime("%Y/%m/%d")<CR>p
 :inoremap <F9> <C-R>=strftime("%Y/%m/%d")<CR>
+
+" Clear highlighting using space
+noremap <silent> <Space> :noh<CR>
 
 " Replace the word highlighted everywhere
 vnoremap <C-r> "hy:%s/<C-r>h//gc<left><left><left>
