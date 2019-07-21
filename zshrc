@@ -46,11 +46,12 @@ pass() {
 
 export EDITOR=nvim
 
-# Various CLI shortcuts
+# Various shortcuts
 alias restart='sudo shutdown -r now'
 alias poweroff='sudo shutdown -P now'
 alias vi=nvim
 alias vim=nvim
+pk() { ps -ef | sed 1d | fzf -m --header='[kill:process]'| awk '{print $2}' | xargs kill -9 }
 alias del='gio trash'
 alias o='xdg-open'
 alias l='ls'
@@ -130,3 +131,6 @@ alias recolor="xrandr --output eDP1 --set 'Broadcast RGB' 'Full'"
 # Text files shortcuts
 alias journal="vim ~/docs/notes/journal.md"
 alias notes="vim ~/docs/notes"
+
+# added by travis gem
+[ -f ~/.travis/travis.sh ] && source ~/.travis/travis.sh
