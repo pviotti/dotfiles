@@ -45,4 +45,10 @@ Plug 'Shougo/deoplete.nvim', {'do': ':UpdateRemotePlugins'}
 " deoplete.nvim source for Python
 Plug 'zchee/deoplete-jedi', {'do': 'make'}
 
+" fsharp
+Plug 'fsharp/vim-fsharp', {
+      \ 'for': 'fsharp',
+      \ 'do':  'make fsautocomplete',
+      \}
+
 call plug#end()
