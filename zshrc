@@ -28,7 +28,8 @@ DISABLE_AUTO_UPDATE="true"
 
 source $ZSH/oh-my-zsh.sh
 
-export PATH=$PATH:~/.gem/ruby/2.6.0/bin
+export PATH=$PATH:~/.gem/ruby/2.6.0/bin:~/.dotnet/tools
+export DOTNET_ROOT="/opt/dotnet"
 
 # Time format for ls
 export TIME_STYLE=long-iso
