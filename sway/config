@@ -9,7 +9,7 @@ set $up k
 set $right l
 
 set $w1 1:www
-set $w2 2:term
+#set $w2 2:term
 
 # Your preferred terminal emulator
 set $term urxvt
@@ -233,9 +233,9 @@ workspace 3 output HDMI-A-1
 workspace 4 output HDMI-A-1
 workspace 5 output HDMI-A-1
 
-exec --no-startup-id mako --max-visible 2 --default-timeout 10 --ignore-timeout
+exec --no-startup-id mako --max-visible 2 --default-timeout 10 --ignore-timeout 1
 exec --no-startup-id nextcloud
-exec --no-startup-id onedrive -m
+#exec --no-startup-id onedrive -m
 #exec --no-startup-id nm-applet
 #exec --no-startup-id pasystray
 exec --no-startup-id udiskie --tray
