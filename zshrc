@@ -28,7 +28,7 @@ DISABLE_AUTO_UPDATE="true"
 
 source $ZSH/oh-my-zsh.sh
 
-export PATH=$PATH:~/.gem/ruby/2.6.0/bin:~/.dotnet/tools
+export PATH=$PATH:~/.gem/ruby/2.6.0/bin:~/.dotnet/tools:~/.local/bin
 export DOTNET_ROOT="/opt/dotnet"
 
 # Time format for ls
@@ -65,7 +65,7 @@ remove_lines_from() { grep -F -x -v -f $2 $1; } # removes lines from $1 if they 
 alias pp="ps axuf | pager"
 alias sum="xargs | tr ' ' '+' | bc" ## Usage: echo 1 2 3 | sum
 alias def=sdcv
-alias e="espeak 2>/dev/null"
+alias e="sayit 2>/dev/null"
 mcd() { mkdir $1 && cd $1; }
 i() { (head -5; tail -5) < "$1"; } #| column -t;
 f() { find . -iname "*$1*" 2>/dev/null; }
