@@ -123,7 +123,7 @@ input * xkb_layout "ie,it"
 #
     # switch to workspace
     bindsym $mod+1 workspace $w1
-    bindsym $mod+2 workspace $w2
+    bindsym $mod+2 workspace 2
     bindsym $mod+3 workspace 3
     bindsym $mod+4 workspace 4
     bindsym $mod+5 workspace 5
@@ -134,7 +134,7 @@ input * xkb_layout "ie,it"
     bindsym $mod+0 workspace 10
     # move focused container to workspace
     bindsym $mod+Shift+1 move container to workspace $w1
-    bindsym $mod+Shift+2 move container to workspace $w2
+    bindsym $mod+Shift+2 move container to workspace 2
     bindsym $mod+Shift+3 move container to workspace 3
     bindsym $mod+Shift+4 move container to workspace 4
     bindsym $mod+Shift+5 move container to workspace 5
@@ -231,7 +231,7 @@ gaps inner 3
 gaps outer 0
 
 workspace $w1 output HDMI-A-1
-workspace $w2 output HDMI-A-1
+workspace 2 output HDMI-A-1
 workspace 3 output HDMI-A-1
 workspace 4 output HDMI-A-1
 workspace 5 output HDMI-A-1
