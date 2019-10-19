@@ -22,7 +22,7 @@ DISABLE_CORRECTION="true"
 # DISABLE_UNTRACKED_FILES_DIRTY="true"
 
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
-plugins=(git python command-not-found colored-man-pages)
+plugins=(git command-not-found colored-man-pages)
 
 DISABLE_AUTO_UPDATE="true"
 
