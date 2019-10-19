@@ -13,3 +13,5 @@ autocmd BufNewFile,BufRead *.py set expandtab
 " set vertical line
 autocmd BufRead,BufNewFile *.py set colorcolumn=81
 
+" FSharp
+let g:fsharp_interactive_bin = '/opt/dotnet/sdk/3.0.100/FSharp/fsi.exe'
