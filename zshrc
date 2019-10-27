@@ -36,7 +36,7 @@ export TIME_STYLE=long-iso
 
 # pacman aliases
 alias ug='sudo pacman -Syu'
-alias ugaur='yaourt -Syu --aur'
+alias ugaur='yay -Syu --aur'
 
 pass() {
     [ ! -d /tmp/tc ] && mkdir /tmp/tc
