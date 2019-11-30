@@ -21,3 +21,7 @@ ln -fs "$localDir/nvim/config/keybindings.vim" "$HOME/.config/nvim/config/keybin
 ln -fs "$localDir/nvim/config/language.vim" "$HOME/.config/nvim/config/language.vim"
 ln -fs "$localDir/nvim/config/plugins.vim" "$HOME/.config/nvim/config/plugins.vim"
 ln -fs "$localDir/nvim/config/styles.vim" "$HOME/.config/nvim/config/styles.vim"
+
+# sway
+rm -rf ~/.config/sway
+ln -fs "$localDir/sway" "$HOME/.config/sway"
