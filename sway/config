@@ -227,7 +227,7 @@ bar {
     }
 }
 
-gaps inner 3
+gaps inner 1
 gaps outer 0
 
 workspace $w1 output HDMI-A-1
