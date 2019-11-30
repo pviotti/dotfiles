@@ -260,6 +260,10 @@ bindsym $mod+F11 exec light -U 2 # decrease screen brightness
 # toggle keyboard layout
 bindsym $mod+space exec ~/.config/sway/toggle_kb.sh
 
+# wallpapers
+set $wallpapers_path $HOME/.config/sway/wallpapers
+output "*" bg `find $wallpapers_path -type f | shuf -n 1` fill
+
 # avoid blank screen when application is full screen
 #exec_always ~/.config/sway/disable-standby-fs.py
 
