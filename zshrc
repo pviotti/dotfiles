@@ -35,8 +35,9 @@ export DOTNET_ROOT="/opt/dotnet"
 export TIME_STYLE=long-iso
 
 # pacman aliases
-alias ug='sudo pacman -Syu'
+alias ug='yay -Pw && sudo pacman -Syu'
 alias ugaur='yay -Syu --aur --devel'
+alias ugfw='fwupdmgr refresh && fwupdmgr update'
 
 pass() {
     [ ! -d /tmp/tc ] && mkdir /tmp/tc
@@ -60,7 +61,6 @@ alias ra=ranger
 alias -g grepi='| grep -i'
 lt() { ls -ltrsa "$@" | tail; }
 psgrep() { ps axuf | grep -v grep | grep "$@" -i --color=auto; }
-fname() { find . -iname "*$@*"; }
 remove_lines_from() { grep -F -x -v -f $2 $1; } # removes lines from $1 if they appear in $2
 alias pp="ps axuf | pager"
 alias sum="xargs | tr ' ' '+' | bc" ## Usage: echo 1 2 3 | sum
