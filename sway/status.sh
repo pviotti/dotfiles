@@ -20,7 +20,7 @@ date_formatted=$(date "+%a %d-%m-%Y %H:%M")
 # the charge percentage automatically to a space, producing a result like
 # "charging 59%" or "fully-charged 100%".
 battery_info=$(upower --show-info $(upower --enumerate | grep 'BAT') |\
-    grep "percentage" | awk '{print $2 "🔋"}' ) 
+    grep "percentage" | awk '{print $2 "🔋"}' )
 
 # "amixer -M" gets the mapped volume for evaluating the percentage which
 # is more natural to the human ear according to "man amixer".
@@ -29,20 +29,20 @@ battery_info=$(upower --show-info $(upower --enumerate | grep 'BAT') |\
 # is muted or not.
 # "tr -d []" removes brackets around the volume.
 # Adapted from https://bbs.archlinux.org/viewtopic.php?id=89648
-audio_volume=$(amixer -M get Master | 
+audio_volume=$(amixer -M get Master |
     awk '/Left:/ {print $6=="[off]" ? $5" 🔇":  $5" 🔉"}' |\
     tr -d [])
 
 # Keyboard layout
-keyboard_layout=$(setxkbmap -print | 
-    awk -F"+" '/xkb_symbols/ {print $2}' | 
+keyboard_layout=$(setxkbmap -print |
+    awk -F"+" '/xkb_symbols/ {print $2}' |
     tr "[:lower:]" "[:upper:]")
-    
+
 # Wifi
 # https://www.cyberciti.biz/tips/linux-find-out-wireless-network-speed-signal-strength.html
 wifi_status=$(nmcli -t -w 0 dev wifi |\
     grep -e "^*" |\
-    awk -F ":" '{ print $2}')
+    awk -F ":" '{ print $8}')
 
 # Additional emojis and characters for the status bar:
 # Electricity: ⚡ ↯ ⭍ 🔌
