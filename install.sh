@@ -25,3 +25,4 @@ ln -fs "$localDir/nvim/config/styles.vim" "$HOME/.config/nvim/config/styles.vim"
 # sway
 rm -rf ~/.config/sway
 ln -fs "$localDir/sway" "$HOME/.config/sway"
+sed 's|^Exec=|Exec=env MOZ_ENABLE_WAYLAND=1 |g' /usr/share/applications/firefox.desktop > ~/.local/share/applications/firefox.desktop
