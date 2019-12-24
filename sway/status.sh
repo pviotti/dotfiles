@@ -34,19 +34,24 @@ audio_volume=$(amixer -M get Master |
     tr -d [])
 
 # Keyboard layout
-keyboard_layout=$(setxkbmap -print |
+keyboard_layout=$(echo $(setxkbmap -print |
     awk -F"+" '/xkb_symbols/ {print $2}' |
-    tr "[:lower:]" "[:upper:]")
+    tr "[:lower:]" "[:upper:]") ⌨)
 
 # Wifi
 # https://www.cyberciti.biz/tips/linux-find-out-wireless-network-speed-signal-strength.html
-wifi_status=$(nmcli -t -w 0 dev wifi |\
-    grep -e "^*" |\
-    awk -F ":" '{ print $8}')
+wifi_enabled=$(nmcli radio wifi)
+if [ $wifi_enabled == "disabled" ]; then
+    wifi_status='<span foreground="red">disabled</span>'
+else
+    wifi_status=$(nmcli -t -w 0 dev wifi |\
+        grep -e "^*" |\
+        awk -F ":" '{ print $8 " 📶"}')
+fi
 
 # Additional emojis and characters for the status bar:
 # Electricity: ⚡ ↯ ⭍ 🔌
 # Audio: 🔈 🔊 🎧 🎶 🎵 🎤
 # Separators: \| ❘ ❙ ❚
 # Misc: 🐧 💎 💻 💡 ⭐ 📁 ↑ ↓ ✉ ✅ ❎ 📶🖮
-echo  $keyboard_layout \| $wifi_status \| $audio_volume \| $battery_info \| $date_formatted
+echo $keyboard_layout \| $wifi_status \| $audio_volume \| $battery_info \| $date_formatted
