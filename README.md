@@ -1,16 +1,8 @@
 # dotfiles
 
-Configuration files for various tools I use on my Linux machines: zsh, neovim, tmux, git and sway.
+Configuration files for various tools I use on my Linux machines:
+zsh, neovim, tmux, git, alacritty and sway.
 The neovim configuration has been in part copied from [cedi/vim-config](https://github.com/cedi/vim-config).
-
-## Dependencies
-
- * git
- * curl
- * tmux
- * ctags
- * cscope
- * (sway)
 
 ## Installation
 
