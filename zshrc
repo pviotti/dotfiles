@@ -129,6 +129,11 @@ alias recolor="xrandr --output eDP1 --set 'Broadcast RGB' 'Full'"
 #    fi
 #}
 
+# Bluetooth headset
+headset_mac="04:52:C7:E1:98:F3"
+alias bton='echo "power on\nconnect $headset_mac" | bluetoothctl'
+alias btoff="bluetoothctl -- power off"
+
 # Text files shortcuts
 alias journal="vim ~/docs/notes/journal.md"
 alias notes="vim ~/docs/notes"
