@@ -34,9 +34,13 @@ audio_volume=$(amixer -M get Master |
     tr -d [])
 
 # Keyboard layout
-keyboard_layout=$(echo $(setxkbmap -print |
-    awk -F"+" '/xkb_symbols/ {print $2}' |
-    tr "[:lower:]" "[:upper:]") ⌨)
+current_kb_layout=$(swaymsg -p -t get_inputs |
+    grep "Logitech_USB_Keyboard$" -A3 -m 1 |  tr -d "[:space:]" | cut -d":" -f7)
+case $current_kb_layout in
+    "Italian") keyboard_layout="IT⌨" ;;
+    "Irish") keyboard_layout="IE⌨" ;;
+    *) keyboard_layout=$current_kb_layout ;;
+esac
 
 # Wifi
 # https://www.cyberciti.biz/tips/linux-find-out-wireless-network-speed-signal-strength.html

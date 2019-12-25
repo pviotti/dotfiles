@@ -46,6 +46,7 @@ exec swayidle -w \
 # resumed. It will also lock your screen before your computer goes to sleep.
 
 ### Input configuration
+# (see: man 5 sway-input)
 input "2:7:SynPS/2_Synaptics_TouchPad" {
     dwt enabled
     tap enabled
@@ -54,7 +55,8 @@ input "2:7:SynPS/2_Synaptics_TouchPad" {
     xkb_model pc105
     tap_button_map lmr
 }
-input * xkb_layout "ie,it"
+input * xkb_layout ie,it
+input * xkb_options grp:win_space_toggle
 
 ### Key bindings
 #
@@ -170,7 +172,8 @@ input * xkb_layout "ie,it"
     bindsym $mod+Shift+space floating toggle
 
     # Swap focus between the tiling area and the floating area
-    # bindsym $mod+space focus mode_toggle XXX
+    # bindsym $mod+space focus mode_toggle
+    # XXX already used for keyboard layout switching
 
     # move focus to the parent container
     bindsym $mod+a focus parent
@@ -248,9 +251,6 @@ bindsym $mod+F1 exec --no-startup-id pactl set-sink-mute 0 toggle # mute sound
 # screen brightness controls
 bindsym $mod+F12 exec light -A 2 # increase screen brightness
 bindsym $mod+F11 exec light -U 2 # decrease screen brightness
-
-# toggle keyboard layout
-bindsym $mod+space exec ~/.config/sway/toggle_kb.sh
 
 # wallpapers
 set $wallpapers_path $HOME/.config/sway/wallpapers
