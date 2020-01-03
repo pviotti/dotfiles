@@ -12,9 +12,9 @@ ln -fs "$pwd/tmux.conf" "$HOME/.tmux.conf"
 ln -fs "$pwd/gitconfig" "$HOME/.gitconfig"
 ln -fs "$pwd/user-dirs.dirs" "$HOME/.config/user-dirs.dirs"
 
-# alacritty
-mkdir -p "$HOME/.config/alacritty"
-ln -fs "$pwd/alacritty.yml" "$HOME/.config/alacritty/alacritty.yml"
+# kitty
+mkdir -p "$HOME/.config/kitty"
+ln -fs "$pwd/kitty.conf" "$HOME/.config/kitty/kitty.conf"
 
 # nvim
 curl -fLo ~/.config/nvim/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
