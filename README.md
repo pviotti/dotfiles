@@ -1,7 +1,7 @@
 # dotfiles
 
 Configuration files for various tools I use on my Linux machines:
-zsh, neovim, tmux, git, kitty and sway.
+zsh, neovim, tmux, git, kitty, ranger and sway.
 The neovim configuration has been in part copied from [cedi/vim-config](https://github.com/cedi/vim-config).
 
 ## Installation

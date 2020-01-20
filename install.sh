@@ -32,3 +32,9 @@ ln -fs "$pwd/sway" "$HOME/.config/sway"
 
 # enable Firefox on Wayland
 sed 's|^Exec=|Exec=env MOZ_ENABLE_WAYLAND=1 |g' /usr/share/applications/firefox.desktop > ~/.local/share/applications/firefox.desktop
+
+# ranger
+mkdir -p "$HOME/.config/ranger"
+ln -fs "$pwd/ranger/rc.conf" "$HOME/.config/ranger/rc.conf"
+ln -fs "$pwd/ranger/rifle.conf" "$HOME/.config/ranger/rifle.conf"
+ln -fs "$pwd/ranger/scope.sh" "$HOME/.config/ranger/scope.sh"
