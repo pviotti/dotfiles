@@ -145,3 +145,7 @@ alias notes="vim ~/docs/notes"
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+
+# fix issues of Java GUI applications on Sway
+# https://github.com/swaywm/sway/wiki#issues-with-java-applications
+export _JAVA_AWT_WM_NONREPARENTING=1
