@@ -29,6 +29,8 @@ set tags=./tags;
 
 set textwidth=80
 
+set scrolloff=50
+
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Define search options
 set ignorecase
