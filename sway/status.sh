@@ -35,7 +35,7 @@ audio_volume=$(amixer -M get Master |
 
 # Keyboard layout
 current_kb_layout=$(swaymsg -p -t get_inputs |
-    grep "Logitech_USB_Keyboard$" -A3 -m 1 |  tr -d "[:space:]" | cut -d":" -f7)
+    grep "Dell USB Entry Keyboard$" -A5 -m1 | tr -d "[:space:]" | cut -d":" -f9)
 case $current_kb_layout in
     "Italian") keyboard_layout="IT⌨" ;;
     "Irish") keyboard_layout="IE⌨" ;;
