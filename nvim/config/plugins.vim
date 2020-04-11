@@ -43,7 +43,7 @@ Plug 'neutaaaaan/iosvkem'
 Plug 'Shougo/deoplete.nvim', {'do': ':UpdateRemotePlugins'}
 
 " deoplete.nvim source for Python
-Plug 'zchee/deoplete-jedi', {'do': 'make'}
+" Plug 'zchee/deoplete-jedi', {'do': 'make'}
 
 " fsharp
 Plug 'fsharp/vim-fsharp', {
