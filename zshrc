@@ -39,6 +39,11 @@ alias ug='yay -Pw && sudo pacman -Syu'
 alias ugaur='yay -Syu --aur --devel'
 alias ugfw='fwupdmgr refresh && fwupdmgr update'
 
+# security
+alias checkrootkits="sudo rkhunter --update; sudo rkhunter --propupd; sudo rkhunter --check"
+alias checkvirus="clamscan --recursive=yes --infected /home"
+alias updateantivirus="sudo freshclam"
+
 pass() {
     [ ! -d /tmp/tc ] && mkdir /tmp/tc
     veracrypt ~/docs/tc_volume /tmp/tc
