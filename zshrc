@@ -157,5 +157,5 @@ if (( $RANDOM % 2 == 0 )); then
     line=$(($(seq 99 | shuf -n 1) * 3 + 1))
     sed -n "$line{N;p}" $cmd_db
 else
-    fortune
+    fortune -a
 fi

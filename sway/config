@@ -171,9 +171,8 @@ input * xkb_options grp:win_space_toggle
     # Toggle the current focus between tiling and floating mode
     bindsym $mod+Shift+space floating toggle
 
-    # Swap focus between the tiling area and the floating area
-    # bindsym $mod+space focus mode_toggle
-    # XXX already used for keyboard layout switching
+    # Swap focus between the tiling area and the floating area (Mod1=Alt)
+    bindsym $mod+Mod1+space focus mode_toggle
 
     # move focus to the parent container
     bindsym $mod+a focus parent
@@ -260,6 +259,7 @@ output "*" bg `find $wallpapers_path -type f | shuf -n 1` fill
 for_window [app_id="Alacritty"] opacity 0.95
 
 for_window [app_id="veracrypt"] floating enable
+for_window [class="Leafpad"] floating enable
 
 exec --no-startup-id mako --max-visible 2 --default-timeout 10 --ignore-timeout 1
 exec --no-startup-id nextcloud
