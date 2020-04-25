@@ -30,7 +30,7 @@ battery_info=$(upower --show-info $(upower --enumerate | grep 'BAT') |\
 # "tr -d []" removes brackets around the volume.
 # Adapted from https://bbs.archlinux.org/viewtopic.php?id=89648
 audio_volume=$(amixer -M get Master |
-    awk '/Left:/ {print $6=="[off]" ? $5" 🔇":  $5" 🔉"}' |\
+    awk '/Mono:/ {print $6=="[off]" ? $4" 🔇":  $4" 🔉"}' |\
     tr -d [])
 
 # Keyboard layout
