@@ -28,6 +28,8 @@ DISABLE_AUTO_UPDATE="true"
 
 source $ZSH/oh-my-zsh.sh
 
+source /usr/share/z/z.sh
+
 export PATH=$PATH:~/.gem/ruby/2.6.0/bin:~/.dotnet/tools:~/.local/bin
 export DOTNET_ROOT="/opt/dotnet"
 
@@ -98,11 +100,11 @@ extract () {
     fi
 }
 
-# Various web
+# Various web tools
 cheat() { curl cht.sh/$1 }
 alias weather="curl http://wttr.in/dublin"
 
-# Version Control Systems: SVN, Git, TFS
+# Version Control Systems
 function svndiff { svn diff "${@}" | colordiff | less; }
 alias gti="git"
 alias tf=/opt/tee-clc-14.134.0/tf
@@ -120,19 +122,19 @@ function kobo () {
 	fi
 }
 
-# Fix for Yoga laptop monitor transient color problem
-alias recolor="xrandr --output eDP1 --set 'Broadcast RGB' 'Full'"
-
 # Version managers: asdf and nvm
 #source $HOME/.asdf/asdf.sh
 #source $HOME/.asdf/completions/asdf.bash
-#source /usr/share/nvm/init-nvm.sh
 #function cd {
 #    builtin cd "$@"
 #    if [ -f "bin/activate" ] ; then
 #        source bin/activate
 #    fi
 #}
+# nvm (node version manager)
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 
 # Bluetooth headset
 headset_mac="04:52:C7:E1:98:F3"
@@ -142,15 +144,3 @@ alias btoff="bluetoothctl -- power off"
 # Text files shortcuts
 alias journal="vim ~/docs/notes/journal.md"
 alias notes="vim ~/docs/notes"
-
-# added by travis gem
-[ -f ~/.travis/travis.sh ] && source ~/.travis/travis.sh
-
-# nvm (node version manager)
-export NVM_DIR="$HOME/.nvm"
-[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
-[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
-
-# fix issues of Java GUI applications on Sway
-# https://github.com/swaywm/sway/wiki#issues-with-java-applications
-export _JAVA_AWT_WM_NONREPARENTING=1

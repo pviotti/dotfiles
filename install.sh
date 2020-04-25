@@ -10,6 +10,7 @@ rm -f ~/.zshrc
 ln -fs "$pwd/zshrc" "$HOME/.zshrc"
 ln -fs "$pwd/tmux.conf" "$HOME/.tmux.conf"
 ln -fs "$pwd/gitconfig" "$HOME/.gitconfig"
+ln -fs "$pwd/pam_environment" "$HOME/.pam_environment"
 ln -fs "$pwd/user-dirs.dirs" "$HOME/.config/user-dirs.dirs"
 
 # kitty
@@ -29,9 +30,6 @@ ln -fs "$pwd/nvim/config/styles.vim" "$HOME/.config/nvim/config/styles.vim"
 # sway
 rm -rf ~/.config/sway
 ln -fs "$pwd/sway" "$HOME/.config/sway"
-
-# enable Firefox on Wayland
-sed 's|^Exec=|Exec=env MOZ_ENABLE_WAYLAND=1 |g' /usr/share/applications/firefox.desktop > ~/.local/share/applications/firefox.desktop
 
 # ranger
 mkdir -p "$HOME/.config/ranger"
