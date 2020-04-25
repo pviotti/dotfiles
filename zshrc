@@ -144,3 +144,18 @@ alias btoff="bluetoothctl -- power off"
 # Text files shortcuts
 alias journal="vim ~/docs/notes/journal.md"
 alias notes="vim ~/docs/notes"
+
+# Print a random adage or a command line snippet
+if (( $RANDOM % 2 == 0 )); then
+    api=https://www.commandlinefu.com/commands/browse/sort-by-votes/plaintext
+    cmd_db=$HOME/.cache/commandlinefu
+    if [ ! -f $cmd_db ]; then
+        for offset in $(seq 0 25 75 100 125); do
+            curl $api/$offset | tail +3 >> $cmd_db
+        done
+    fi
+    line=$(($(seq 99 | shuf -n 1) * 3 + 1))
+    sed -n "$line{N;p}" $cmd_db
+else
+    fortune
+fi
