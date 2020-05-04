@@ -150,7 +150,7 @@ if (( $RANDOM % 2 == 0 )); then
     api=https://www.commandlinefu.com/commands/browse/sort-by-votes/plaintext
     cmd_db=$HOME/.cache/commandlinefu
     if [ ! -f $cmd_db ]; then
-        for offset in $(seq 0 25 75 100 125); do
+        for offset in $(seq 0 25 125); do
             curl $api/$offset | tail +3 >> $cmd_db
         done
     fi
