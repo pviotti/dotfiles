@@ -230,7 +230,8 @@ bar {
     }
 }
 
-gaps inner 1
+default_border pixel
+gaps inner 4
 gaps outer 0
 
 workspace $w1 output HDMI-A-1
