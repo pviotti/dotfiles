@@ -41,7 +41,7 @@ alias ug='yay -Pw && sudo pacman -Syu'
 alias ugaur='yay -Syu --aur --devel'
 alias ugfw='fwupdmgr refresh && fwupdmgr update'
 
-# security
+# Security
 alias checkrootkits="sudo rkhunter --update; sudo rkhunter --propupd; sudo rkhunter --check"
 alias checkvirus="clamscan --recursive=yes --infected /home"
 alias updateantivirus="sudo freshclam"
@@ -107,7 +107,7 @@ alias weather="curl http://wttr.in/dublin"
 # Version Control Systems
 function svndiff { svn diff "${@}" | colordiff | less; }
 alias gti="git"
-alias tf=/opt/tee-clc-14.134.0/tf
+#alias tf=/opt/tee-clc-14.134.0/tf
 
 # Support brace expansion, e.g. {1..9} or {a-z}
 setopt BRACE_CCL
@@ -122,6 +122,39 @@ function kobo () {
 	fi
 }
 
+# vi mode
+bindkey -v
+export KEYTIMEOUT=1
+
+# Use vim keys in tab complete menu:
+bindkey -M menuselect 'h' vi-backward-char
+bindkey -M menuselect 'k' vi-up-line-or-history
+bindkey -M menuselect 'l' vi-forward-char
+bindkey -M menuselect 'j' vi-down-line-or-history
+# Reverse history search (not active by default in vi mode)
+bindkey "^R" history-incremental-search-backward
+
+# Change cursor shape for different vi modes.
+function zle-keymap-select {
+  if [[ ${KEYMAP} == vicmd ]] ||
+     [[ $1 = 'block' ]]; then
+    echo -ne '\e[1 q'
+  elif [[ ${KEYMAP} == main ]] ||
+       [[ ${KEYMAP} == viins ]] ||
+       [[ ${KEYMAP} = '' ]] ||
+       [[ $1 = 'beam' ]]; then
+    echo -ne '\e[5 q'
+  fi
+}
+zle -N zle-keymap-select
+zle-line-init() {
+    zle -K viins # initiate `vi insert` as keymap (can be removed if `bindkey -V` has been set elsewhere)
+    echo -ne "\e[5 q"
+}
+zle -N zle-line-init
+echo -ne '\e[5 q' # Use beam shape cursor on startup.
+preexec() { echo -ne '\e[5 q' ;} # Use beam shape cursor for each new prompt.
+
 # Version managers: asdf and nvm
 #source $HOME/.asdf/asdf.sh
 #source $HOME/.asdf/completions/asdf.bash
@@ -132,9 +165,9 @@ function kobo () {
 #    fi
 #}
 # nvm (node version manager)
-export NVM_DIR="$HOME/.nvm"
-[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
-[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+#export NVM_DIR="$HOME/.nvm"
+#[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+#[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 
 # Bluetooth headset
 headset_mac="04:52:C7:E1:98:F3"
