@@ -1,5 +1,5 @@
 #!/bin/bash
-set -euo pipefile
+set -euo pipefail
 
 pwd=$(pwd)
 
