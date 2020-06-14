@@ -55,9 +55,13 @@ pass() {
 
 export EDITOR=nvim
 
+# Suffix aliases
+alias -s {ape,avi,flv,m4a,mkv,mov,mp3,mp4,mpeg,mpg,ogg,ogm,wav,webm}=mpv
+
 # Various shortcuts
 alias restart='sudo shutdown -r now'
 alias poweroff='sudo shutdown -P now'
+alias reload='exec zsh -l'
 alias vi=nvim
 alias vim=nvim
 pk() { ps -ef | sed 1d | fzf -m --header='[kill:process]'| awk '{print $2}' | xargs kill -9 }
@@ -103,6 +107,7 @@ extract () {
 # Various web tools
 cheat() { curl cht.sh/$1 }
 alias weather="curl http://wttr.in/dublin"
+alias meme="wget -O - -q reddit.com/r/memes.json | jq '.data.children[1] |.data.url' | xargs kitty +kitten icat"
 
 # Version Control Systems
 function svndiff { svn diff "${@}" | colordiff | less; }
