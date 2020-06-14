@@ -233,9 +233,9 @@ bar {
     }
 }
 
-default_border pixel
-gaps inner 4
-gaps outer 0
+default_border pixel 3
+gaps inner 3
+gaps outer 1
 
 workspace $w1 output HDMI-A-1
 workspace 2 output HDMI-A-1
@@ -266,7 +266,7 @@ for_window [app_id="veracrypt"] floating enable
 for_window [class="Leafpad"] floating enable
 for_window [app_id="mpv"] inhibit_idle fullscreen
 
-assign [app_id="telegramdesktop"] workspace $workspace4
+assign [app_id="telegramdesktop"] workspace 3
 
 exec --no-startup-id mako --max-visible 2 --default-timeout 10 --ignore-timeout 1
 exec --no-startup-id nextcloud
