@@ -129,7 +129,7 @@ function kobo () {
 
 vi_mode=true
 if [ "$vi_mode" = true ] ; then
-    # vi mode
+    # vi mode (bindkey -l - to check key bindings)
     bindkey -v
     export KEYTIMEOUT=1
 
@@ -140,6 +140,8 @@ if [ "$vi_mode" = true ] ; then
     bindkey -M menuselect 'j' vi-down-line-or-history
     # Reverse history search (not active by default in vi mode)
     bindkey "^R" history-incremental-search-backward
+    # Delete key
+    bindkey -a '^[[3~' delete-char
 
     # Change cursor shape for different vi modes.
     function zle-keymap-select {
@@ -166,6 +168,12 @@ if [ "$vi_mode" = true ] ; then
     autoload edit-command-line; zle -N edit-command-line
     bindkey '^e' edit-command-line
 fi
+
+# enable bash autocompletion in zsh
+autoload -U +X bashcompinit && bashcompinit
+
+# Azure cli autocompletion
+source /opt/azure-cli/az.completion
 
 # Version managers: asdf and nvm
 #source $HOME/.asdf/asdf.sh
