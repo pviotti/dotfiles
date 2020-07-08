@@ -142,6 +142,7 @@ if [ "$vi_mode" = true ] ; then
     bindkey "^R" history-incremental-search-backward
     # Delete key
     bindkey -a '^[[3~' delete-char
+    bindkey '^[[3~' delete-char
 
     # Change cursor shape for different vi modes.
     function zle-keymap-select {
