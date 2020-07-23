@@ -26,9 +26,12 @@ function ScheduleUpgradeJob() {
         Name = "Chocolatey upgrade"
         ScriptBlock = {choco upgrade all -y}
         Trigger = New-JobTrigger -Weekly -DaysOfWeek Monday, Wednesday, Friday -At "15:00"
-        ScheduledJobOption = New-ScheduledJobOption -RunElevated -MultipleInstancePolicy StopExisting -RequireNetwork
+        ScheduledJobOption = New-ScheduledJobOption -RunElevated -MultipleInstancePolicy StopExisting -RequireNetwork -StartIfOnBattery -ContinueIfGoingOnBattery
     }
     Register-ScheduledJob @ScheduledJob
+    $task = Get-ScheduledTask -TaskName "Chocolatey upgrade"
+    $task.Principal = New-ScheduledTaskPrincipal -UserId "$($env:USERDOMAIN)\$($env:USERNAME)" -LogonType ServiceAccount -RunLevel Highest
+    Set-ScheduledTask $task
 }
 
 function Show-Menu {
