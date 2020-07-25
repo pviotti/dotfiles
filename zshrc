@@ -127,7 +127,7 @@ function kobo () {
 	fi
 }
 
-vi_mode=true
+vi_mode=false
 if [ "$vi_mode" = true ] ; then
     # vi mode (bindkey -l - to check key bindings)
     bindkey -v
