@@ -266,13 +266,18 @@ set $wallpapers_path $HOME/.config/sway/wallpapers
 output "*" bg `find $wallpapers_path -type f | shuf -n 1` fill
 
 # transparency of terminal windows
-for_window [app_id="Alacritty"] opacity 0.95
+#for_window [app_id="Kitty"] opacity 0.95
 
 for_window [app_id="veracrypt"] floating enable
 for_window [class="Leafpad"] floating enable
 for_window [app_id="mpv"] inhibit_idle fullscreen
 
+# workspace 3: chats
 assign [app_id="telegramdesktop"] workspace 3
+
+# workspace 4: work
+assign [class="Microsoft Teams - Preview"] workspace 4
+assign [class="Microsoft-edge"] workspace 4
 
 exec --no-startup-id mako --max-visible 2 --default-timeout 10 --ignore-timeout 1
 exec --no-startup-id nextcloud
