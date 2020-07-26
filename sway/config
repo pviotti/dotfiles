@@ -1,5 +1,7 @@
 # Sway configuration file
-# (see: man 5 sway)
+# see: man 5 sway
+# to get key bindings id: xev -event keyboard
+# to get program windows details: waymsg -t get_tree | less
 
 ### Variables
 #
@@ -266,6 +268,9 @@ bindsym XF86MonBrightnessUp exec light -A 2
 bindsym $mod+F11 exec light -U 2                 # decrease screen brightness
 bindsym XF86MonBrightnessDown exec light -U 2
 
+# calculator
+bindsym XF86Calculator exec gnome-calculator
+
 # wallpapers
 set $wallpapers_path $HOME/.config/sway/wallpapers
 output "*" bg `find $wallpapers_path -type f | shuf -n 1` fill
@@ -273,6 +278,7 @@ output "*" bg `find $wallpapers_path -type f | shuf -n 1` fill
 # transparency of terminal windows
 #for_window [app_id="Kitty"] opacity 0.95
 
+for_window [app_id="gnome-calculator"] floating enable
 for_window [app_id="veracrypt"] floating enable
 for_window [class="Leafpad"] floating enable
 for_window [app_id="mpv"] inhibit_idle fullscreen
