@@ -253,9 +253,12 @@ bindsym $mod+Shift+tab workspace next_on_output
 bindsym --release Print exec grim -g "$(slurp)" - | wl-copy
 
 # Pulse Audio controls
-bindsym $mod+F3 exec --no-startup-id pactl -- set-sink-volume 0 +10% #increase sound volume
-bindsym $mod+F2 exec --no-startup-id pactl -- set-sink-volume 0 -10% #decrease sound volume
-bindsym $mod+F1 exec --no-startup-id pactl set-sink-mute 0 toggle # mute sound
+bindsym $mod+F3 exec --no-startup-id pactl -- set-sink-volume 0 +10%                 # increase volume
+bindsym XF86AudioRaiseVolume exec --no-startup-id pactl -- set-sink-volume 0 +10%
+bindsym $mod+F2 exec --no-startup-id pactl -- set-sink-volume 0 -10%                 # decrease volume
+bindsym XF86AudioLowerVolume exec --no-startup-id pactl -- set-sink-volume 0 -10%
+bindsym $mod+F1 exec --no-startup-id pactl set-sink-mute 0 toggle                    # mute
+bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute 0 toggle
 
 # screen brightness controls
 bindsym $mod+F12 exec light -A 2                 # increase screen brightness
