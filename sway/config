@@ -13,7 +13,7 @@ set $down j
 set $up k
 set $right l
 
-set $w1 1:www
+set $w1 1
 
 # terminal emulator
 set $term kitty
@@ -220,19 +220,11 @@ focus_follows_mouse no
 
 # Font for window titles. Will also be used by the bar unless a different font
 # is used in the bar {} block below.
-font pango:sans-serif 8
+font Roboto 8 #pango:sans-serif 8
 
 # swaybar (see: man 5 swaybar)
 bar {
-    position top
-    status_command while ~/.config/sway/status.sh; do sleep 1; done
-    pango_markup enabled
-
-    colors {
-        statusline #ffffff
-        background #323232
-        #inactive_workspace #32323200 #32323200 #5c5c5c
-    }
+    swaybar_command waybar
 }
 
 default_border pixel 3
@@ -288,9 +280,9 @@ for_window [app_id="mpv"] inhibit_idle fullscreen
 # workspace 3: chats
 assign [app_id="telegramdesktop"] workspace 3
 
-# workspace 4: work
-assign [class="Microsoft Teams - Preview"] workspace 4
-assign [class="Microsoft-edge"] workspace 4
+# workspace 5: work
+assign [class="Microsoft Teams - Preview"] workspace 5
+assign [class="Microsoft-edge"] workspace 5
 
 exec --no-startup-id nextcloud
 #exec --no-startup-id mako --max-visible 2 --default-timeout 10 --ignore-timeout 1

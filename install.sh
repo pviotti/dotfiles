@@ -32,6 +32,10 @@ ln -fs "$pwd/nvim/config/styles.vim" "$HOME/.config/nvim/config/styles.vim"
 rm -rf ~/.config/sway
 ln -fs "$pwd/sway" "$HOME/.config/sway"
 
+# waybar
+rm -rf ~/.config/waybar
+ln -fs "$pwd/waybar" "$HOME/.config/waybar"
+
 # ranger
 mkdir -p "$HOME/.config/ranger"
 ln -fs "$pwd/ranger/rc.conf" "$HOME/.config/ranger/rc.conf"
