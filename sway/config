@@ -13,8 +13,6 @@ set $down j
 set $up k
 set $right l
 
-set $w1 1
-
 # terminal emulator
 set $term kitty
 
