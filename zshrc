@@ -46,13 +46,6 @@ alias checkrootkits="sudo rkhunter --update; sudo rkhunter --propupd; sudo rkhun
 alias checkvirus="clamscan --recursive=yes --infected /home"
 alias updateantivirus="sudo freshclam"
 
-pass() {
-    [ ! -d /tmp/tc ] && mkdir /tmp/tc
-    veracrypt ~/docs/tc_volume /tmp/tc
-    cat /tmp/tc/pwd/*$1*
-    veracrypt -d
-}
-
 export EDITOR=nvim
 
 # Suffix aliases
