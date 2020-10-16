@@ -277,6 +277,8 @@ for_window [app_id="mpv"] inhibit_idle fullscreen
 
 # workspace 3: chats
 assign [app_id="telegramdesktop"] workspace 3
+assign [class="Slack"] workspace 3
+assign [class="Skype"] workspace 3
 
 # workspace 5: work
 assign [class="Microsoft Teams - Preview"] workspace 5

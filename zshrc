@@ -100,7 +100,7 @@ extract () {
 # Various web tools
 cheat() { curl cht.sh/$1 }
 alias weather="curl http://wttr.in/dublin"
-alias meme="wget -O - -q reddit.com/r/memes.json | jq '.data.children[1] |.data.url' | xargs kitty +kitten icat"
+alias meme="wget -L -O - -q reddit.com/r/memes.json | jq '.data.children[2] |.data.url' | xargs kitty +kitten icat"
 
 # Version Control Systems
 function svndiff { svn diff "${@}" | colordiff | less; }
