@@ -26,6 +26,10 @@ plugins=(git command-not-found colored-man-pages)
 
 DISABLE_AUTO_UPDATE="true"
 
+# Fix tab completion bug with UTF special characters in prompt - https://stackoverflow.com/a/22779469
+export LC_ALL=en_US.UTF-8
+export LANG=en_US.UTF-8
+
 source $ZSH/oh-my-zsh.sh
 
 [ -f /usr/share/z/z.sh ] && source /usr/share/z/z.sh
