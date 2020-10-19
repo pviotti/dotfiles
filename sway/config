@@ -274,6 +274,8 @@ for_window [app_id="gnome-calculator"] floating enable
 for_window [app_id="veracrypt"] floating enable
 for_window [class="Leafpad"] floating enable
 for_window [app_id="mpv"] inhibit_idle fullscreen
+for_window [app_id="firefox" title="^Picture-in-Picture$"] \
+    floating enable, move position 877 450, sticky enable, border none
 
 # workspace 3: chats
 assign [app_id="telegramdesktop"] workspace 3
