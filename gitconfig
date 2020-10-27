@@ -13,3 +13,5 @@
     c = commit
     st = status
 
+[help]
+    autocorrect = 30
