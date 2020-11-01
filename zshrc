@@ -41,8 +41,8 @@ export DOTNET_ROOT="/opt/dotnet"
 export TIME_STYLE=long-iso
 
 # pacman aliases
-alias ug='yay -Pw && sudo pacman -Syu'
-alias ugaur='yay -Syu --aur --devel'
+alias ug='paru -Pw && sudo pacman -Syu'
+alias ugaur='paru -Syu --aur --devel'
 alias ugfw='fwupdmgr refresh && fwupdmgr update'
 
 # Security
