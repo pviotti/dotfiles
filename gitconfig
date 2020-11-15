@@ -1,6 +1,10 @@
 [user]
     name = Paolo Viotti
     email = pviotti@users.noreply.github.com
+    signingkey = E58B49C749BD8E25
+
+[commit]
+    gpgsign = true
 
 [color]
     ui = true
