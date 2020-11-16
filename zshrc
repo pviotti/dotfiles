@@ -119,7 +119,7 @@ zstyle ':completion:*:*:vim:*:*files' ignored-patterns '*.beam'
 # Turn research PDF articles into PDF readable by Kobo e-reader
 function kobo () {
 	if [ -f $1 ]; then
-		k2pdfopt -x -ui- -w 758p -h 942p -dpi 213 -om 0.2in -o $(basename $1 .pdf)-kobo.pdf $1
+		k2pdfopt -x -ui- -w 1264p -h 1680p -dpi 300 -om 0.2in -o $(basename $1 .pdf)-kobo.pdf $1
 	else
 		echo "'$1' is not a valid file"
 	fi
