@@ -125,6 +125,17 @@ function kobo () {
 	fi
 }
 
+# Reset USB - sometimes USB-C Hub gets unresponsive and external
+# keyboard and mouse stop working (see: dmesg and
+# https://askubuntu.com/a/290519 )
+function usb-reset () {
+    for i in /sys/bus/pci/drivers/[uoex]hci_hcd/*:*; do
+        [ -e "$i" ] || continue
+        echo "${i##*/}" | sudo tee "${i%/*}/unbind"
+        echo "${i##*/}" | sudo tee "${i%/*}/bind"
+    done
+}
+
 vi_mode=false
 if [ "$vi_mode" = true ] ; then
     # vi mode (bindkey -l - to check key bindings)
