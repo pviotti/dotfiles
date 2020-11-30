@@ -289,4 +289,4 @@ assign [class="Microsoft-edge"] workspace 5
 exec --no-startup-id nextcloud
 #exec --no-startup-id mako --max-visible 2 --default-timeout 10 --ignore-timeout 1
 #exec --no-startup-id udiskie --tray
-#exec --no-startup-id redshift # using gammastep instead, started with systemd
+exec --no-startup-id gammastep-indicator
