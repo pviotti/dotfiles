@@ -34,7 +34,7 @@ source $ZSH/oh-my-zsh.sh
 
 [ -f /usr/share/z/z.sh ] && source /usr/share/z/z.sh
 
-export PATH=$PATH:~/.gem/ruby/2.6.0/bin:~/.dotnet/tools:~/.local/bin
+export PATH=$PATH:~/.gem/ruby/2.7.0/bin:~/.dotnet/tools:~/.local/bin
 export DOTNET_ROOT="/usr/share/dotnet"
 
 # Time format for ls
