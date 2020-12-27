@@ -41,8 +41,7 @@ export DOTNET_ROOT="/usr/share/dotnet"
 export TIME_STYLE=long-iso
 
 # pacman aliases
-alias ug='paru -Pw && sudo pacman -Syu'
-alias ugaur='paru -Syu --aur --devel'
+alias pacman-cleanup='paru -Rns $(paru -Qdtq)'
 alias ugfw='fwupdmgr refresh && fwupdmgr update'
 
 # Security
@@ -61,10 +60,12 @@ alias poweroff='sudo shutdown -P now'
 alias reload='exec zsh -l'
 alias vi=nvim
 alias vim=nvim
+alias :q=exit
 pk() { ps -ef | sed 1d | fzf -m --header='[kill:process]'| awk '{print $2}' | xargs kill -9 }
 alias del='gio trash'
 alias o='xdg-open'
-alias l='ls'
+alias l='ls --group-directories-first'
+alias fz='nvim `find . | fzf --height=10`'
 alias ra=ranger
 alias -g grepi='| grep -i'
 lt() { ls -ltrsa "$@" | tail; }
