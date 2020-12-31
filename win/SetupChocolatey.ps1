@@ -7,7 +7,7 @@ Simple script to setup Chocolatey for a Windows development workstation.
 Inspired by https://github.com/adityastic/Windows-Config
 #>
 
-$BasicPackages = -split "git vscode vlc powertoys microsoft-windows-terminal postman python telegram poshgit powershell-core lockhunter ilspy gimp nextcloud-client nmap notepad3 neovim lf docker-desktop"
+$BasicPackages = -split "git vscode vlc powertoys microsoft-windows-terminal postman python telegram poshgit powershell-core lockhunter ilspy gimp nextcloud-client nmap notepad3 neovim lf docker-desktop wiztree processhacker paint.net codetrack"
 
 function InstallChocolatey() {
     Write-Host "Installing Chocolatey"
