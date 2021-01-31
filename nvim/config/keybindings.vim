@@ -48,6 +48,10 @@ noremap <silent> <Space> :noh<CR>
 " Replace the word highlighted everywhere
 vnoremap <C-r> "hy:%s/<C-r>h//gc<left><left><left>
 
+" Insert new line in normal mode
+map <Enter> o<ESC>
+map <S-Enter> O<ESC>
+
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " cTags
 nnoremap <C-}> <C-T>
