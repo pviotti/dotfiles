@@ -1,7 +1,7 @@
 [user]
     name = Paolo Viotti
     email = skypixel@gmail.com
-    signingkey = E58B49C749BD8E25
+    signingkey = 7D5E8FAA82CD8F10
 
 [commit]
     gpgsign = true
