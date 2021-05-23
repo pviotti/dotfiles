@@ -41,3 +41,7 @@ mkdir -p "$HOME/.config/ranger"
 ln -fs "$pwd/ranger/rc.conf" "$HOME/.config/ranger/rc.conf"
 ln -fs "$pwd/ranger/rifle.conf" "$HOME/.config/ranger/rifle.conf"
 ln -fs "$pwd/ranger/scope.sh" "$HOME/.config/ranger/scope.sh"
+
+# gpg agent
+mkdir -p "$HOME/.gnupg"
+ln -fs "$pwd/gpg-agent.conf" "$HOME/.gnupg/gpg-agent.conf"
