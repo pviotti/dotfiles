@@ -219,3 +219,7 @@ if [ ! -f $cmd_db ]; then
 fi
 line=$(($(seq 99 | shuf -n 1) * 3 + 1))
 sed -n "$line{N;p}" $cmd_db
+
+# k8s
+alias k="kubectl"
+[[ /usr/bin/kubectl ]] && source <(kubectl completion zsh)
