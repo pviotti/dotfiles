@@ -1,2 +1,2 @@
-set editing-mode vi # emacs
+set editing-mode emacs
 set completion-ignore-case on
