@@ -19,3 +19,6 @@
 
 [help]
     autocorrect = 30
+
+[core]
+	autocrlf = input
