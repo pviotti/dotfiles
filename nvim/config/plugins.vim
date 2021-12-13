@@ -12,6 +12,9 @@ Plug 'scrooloose/nerdtree', {'on':  'NERDTreeToggle'}
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 
+" Enhanced Python syntax highlighting
+Plug 'vim-python/python-syntax'
+
 " Additional Vim syntax highlighting for C++ (including C++11/14)
 Plug 'octol/vim-cpp-enhanced-highlight'
 

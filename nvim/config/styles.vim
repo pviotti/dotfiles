@@ -11,6 +11,10 @@ let g:airline#extensions#whitespace#enabled = 0
 let g:airline_theme='deus'
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" Python syntax highlighting
+let g:python_highlight_all = 1
+
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Tagbar
 let g:tagbar_autofocus = 1
 let g:tagbar_compact = 1
