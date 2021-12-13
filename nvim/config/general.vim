@@ -27,7 +27,7 @@ set clipboard=unnamed
 " Search recursive for ctags file
 set tags=./tags;
 
-set textwidth=80
+"set textwidth=80
 
 set scrolloff=50
 
