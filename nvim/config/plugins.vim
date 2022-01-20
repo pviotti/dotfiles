@@ -16,7 +16,10 @@ Plug 'vim-airline/vim-airline-themes'
 Plug 'vim-python/python-syntax'
 
 " Additional Vim syntax highlighting for C++ (including C++11/14)
-Plug 'octol/vim-cpp-enhanced-highlight'
+" Plug 'octol/vim-cpp-enhanced-highlight'
+
+" A vim plugin to help you to create/update cscope database and connect to existing proper database automa
+" Plug 'brookhong/cscope.vim'
 
 " Fuzzy file, buffer, mru, tag, etc finder.
 Plug 'ctrlpvim/ctrlp.vim'
@@ -24,17 +27,11 @@ Plug 'ctrlpvim/ctrlp.vim'
 " Tab completion of words inside of a search ('/')
 Plug 'vim-scripts/SearchComplete'
 
-" A vim plugin to help you to create/update cscope database and connect to existing proper database automa
-Plug 'brookhong/cscope.vim'
-
-" fugitive.vim: a Git wrapper so awesome, it should be illegal
-Plug 'tpope/vim-fugitive'
-
 " Highlights trailing whitespace in red and provides :FixWhitespace to fix it.
 Plug 'bronson/vim-trailing-whitespace', {'on': 'FixWhitespace'}
 
 " The BClose Vim plugin for deleting a buffer without closing the window
-Plug 'rbgrouleff/bclose.vim'
+" Plug 'rbgrouleff/bclose.vim'
 
 " Provide easy code formatting in Vim by integrating existing code formatters.
 Plug 'chiel92/vim-autoformat', {'on': 'Autoformat'}
@@ -50,8 +47,10 @@ Plug 'Shougo/deoplete.nvim', {'do': ':UpdateRemotePlugins'}
 
 " fsharp
 Plug 'fsharp/vim-fsharp', {
-      \ 'for': 'fsharp',
-      \ 'do':  'make fsautocomplete',
-      \}
+            \ 'for': 'fsharp',
+            \ 'do':  'make fsautocomplete',
+            \}
+
+Plug 'tpope/vim-surround'
 
 call plug#end()
