@@ -73,8 +73,8 @@ psgrep() { ps axuf | grep -v grep | grep "$@" -i --color=auto; }
 remove_lines_from() { grep -F -x -v -f $2 $1; } # removes lines from $1 if they appear in $2
 alias pp="ps axuf | pager"
 alias sum="xargs | tr ' ' '+' | bc" ## Usage: echo 1 2 3 | sum
-alias def=sdcv
-alias e="sayit 2>/dev/null"
+def() { sdcv $@ | fold }
+e() { sayit "$@" 2>/dev/null }
 mcd() { mkdir $1 && cd $1; }
 i() { (head -5; tail -5) < "$1"; } #| column -t;
 f() { find . -iname "*$1*" 2>/dev/null; }
