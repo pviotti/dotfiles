@@ -127,8 +127,10 @@ function kobo () {
 }
 
 # Reset USB - sometimes USB-C Hub gets unresponsive and external
-# keyboard and mouse stop working (see: dmesg and
-# https://askubuntu.com/a/290519 )
+# keyboard and mouse stop working (see:
+# dmesg and
+# https://askubuntu.com/a/290519  and
+# https://blog.wesleyac.com/posts/linux-reset-usb )
 function usb-reset () {
     for i in /sys/bus/pci/drivers/[uoex]hci_hcd/*:*; do
         [ -e "$i" ] || continue
