@@ -60,7 +60,7 @@ input "1739:30385:CUST0001:00_06CB:76B1_Touchpad" {
 input * xkb_layout ie,it
 input * xkb_options grp:win_space_toggle
 
-input "1118:1970:Microsoft_Microsoft___2.4GHz_Transceiver_v8.0_Mouse" scroll_factor 6.0
+input "1118:1970:Microsoft_Microsoft___2.4GHz_Transceiver_v8.0_Mouse" scroll_factor 2.0
 
 ### Key bindings
 #
