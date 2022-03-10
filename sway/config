@@ -57,8 +57,14 @@ input "1739:30385:CUST0001:00_06CB:76B1_Touchpad" {
     xkb_model pc105
     tap_button_map lmr
 }
-input * xkb_layout ie,it
-input * xkb_options grp:win_space_toggle
+
+# Keyboard layouts and switching key shortcut
+# NB: use explicit keyboard ids because of this bug that makes Firefox crash
+# https://bugzilla.mozilla.org/show_bug.cgi?id=1652820#c31
+input 1118:2040:Microsoft_Wired_Keyboard_600 xkb_layout ie,it
+input 1118:2040:Microsoft_Wired_Keyboard_600 xkb_options grp:win_space_toggle
+input 1:1:AT_Translated_Set_2_keyboard xkb_layout ie,it
+input 1:1:AT_Translated_Set_2_keyboard xkb_options grp:win_space_toggle
 
 input "1118:1970:Microsoft_Microsoft___2.4GHz_Transceiver_v8.0_Mouse" scroll_factor 2.0
 
