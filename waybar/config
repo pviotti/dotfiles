@@ -122,8 +122,9 @@
             "1": "", // Icon: firefox-browser
             "2": "", // Icon: code
             "3": "", // Icon: comment
-            "4": "", // Icon: terminal
-            "5": "", // Icon: briefcase
+            "4": "", // Icon: writing hand
+            "5": "", // Icon: terminal
+            "6": "", // Icon: briefcase
             "urgent": "",
             "focused": "",
             "default": ""
@@ -165,6 +166,5 @@
         "icon-size": 15,
         "spacing": 5
     }
-
 }
 

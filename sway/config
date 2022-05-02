@@ -301,6 +301,9 @@ assign [class="Slack"] workspace 3
 assign [class="Skype"] workspace 3
 assign [class="Microsoft Teams - Preview"] workspace 3
 
+# workspace 4: notes
+assign [class="notion-app"] workspace 4
+
 exec --no-startup-id nextcloud
 exec --no-startup-id udiskie --tray
 exec --no-startup-id gammastep-indicator -l 53.33306:-6.24889
