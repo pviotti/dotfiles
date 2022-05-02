@@ -282,7 +282,7 @@ output "*" bg `find $wallpapers_path -type f | shuf -n 1` fill
 
 for_window [title=".*"] title_format "%title :: %app_id %instance :: %shell"
 
-for_window [app_id="gnome-calculator"] floating enable
+for_window [app_id="org.gnome.Calculator"] floating enable
 for_window [app_id="veracrypt"] floating enable
 for_window [class="Leafpad"] floating enable
 for_window [app_id="mpv"] inhibit_idle fullscreen
