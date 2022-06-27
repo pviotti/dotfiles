@@ -58,6 +58,7 @@ alias -s {ape,avi,flv,m4a,mkv,mov,mp3,mp4,mpeg,mpg,ogg,ogm,wav,webm}=mpv
 alias restart='sudo shutdown -r now'
 alias poweroff='sudo shutdown -P now'
 alias reload='exec zsh -l'
+alias ss='kitty +kitten ssh'
 alias vi=nvim
 alias vim=nvim
 alias :q=exit
@@ -225,3 +226,4 @@ sed -n "$line{N;p}" $cmd_db
 # k8s
 alias k="kubectl"
 [[ /usr/bin/kubectl ]] && source <(kubectl completion zsh)
+
