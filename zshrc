@@ -68,6 +68,7 @@ alias o='xdg-open'
 alias l='ls --group-directories-first'
 alias fz='nvim `find . | fzf --height=10`'
 alias ra=ranger
+alias cal='cal -w -n6'
 alias -g grepi='| grep -i'
 lt() { ls -ltrsa "$@" | tail; }
 psgrep() { ps axuf | grep -v grep | grep "$@" -i --color=auto; }
