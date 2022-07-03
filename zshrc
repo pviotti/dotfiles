@@ -36,6 +36,7 @@ source $ZSH/oh-my-zsh.sh
 
 export PATH=$PATH:~/.gem/ruby/2.7.0/bin:~/.dotnet/tools:~/.local/bin
 export DOTNET_ROOT="/usr/share/dotnet"
+export GOPATH="/opt/go"
 
 # Time format for ls
 export TIME_STYLE=long-iso
