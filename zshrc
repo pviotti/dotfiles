@@ -229,3 +229,5 @@ sed -n "$line{N;p}" $cmd_db
 alias k="kubectl"
 [[ /usr/bin/kubectl ]] && source <(kubectl completion zsh)
 
+# Reset laptop monitor - sometimes it gets stuck after suspend, unknown root cause
+alias screen-reset="swaymsg output eDP-1 disable; swaymsg output eDP-1 enable"
