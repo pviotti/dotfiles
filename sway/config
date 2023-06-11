@@ -3,6 +3,8 @@
 # to get key bindings id: xev -event keyboard
 # to get program windows details: waymsg -t get_tree | less
 
+include /etc/sway/config.d/*
+
 ### Variables
 #
 # Logo key. Use Mod1 for Alt.
