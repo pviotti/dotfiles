@@ -69,7 +69,7 @@ alias o='xdg-open'
 alias l='ls --group-directories-first'
 alias fz='nvim `find . | fzf --height=10`'
 alias ra=ranger
-alias cal='cal -w -n6'
+alias cal='python -m calendar'
 alias -g grepi='| grep -i'
 lt() { ls -ltrsa "$@" | tail; }
 psgrep() { ps axuf | grep -v grep | grep "$@" -i --color=auto; }
@@ -124,6 +124,15 @@ zstyle ':completion:*:*:vim:*:*files' ignored-patterns '*.beam'
 function kobo () {
 	if [ -f $1 ]; then
 		k2pdfopt -x -ui- -w 1264p -h 1680p -dpi 300 -om 0.2in -o $(basename $1 .pdf)-kobo.pdf $1
+	else
+		echo "'$1' is not a valid file"
+	fi
+}
+
+# Compress an mp4 video
+function videocompress () {
+	if [ -f $1 ]; then
+		ffmpeg -i $1 -vcodec libx265 -crf 28 $2
 	else
 		echo "'$1' is not a valid file"
 	fi
