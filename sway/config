@@ -34,6 +34,7 @@ set $menu exec $term --title="launcher" bash -c 'compgen -c | sort -u | fzf | xa
 #output DP-1 scale 1.6
 #output DP-1 resolution 3840x2160 position 0 0
 output DP-1 resolution 2560x1440 position 1920 0
+#output DP-1 resolution 1920x1080 position 1920 0
 # Laptop screen
 # position x = external screen width / scale
 output eDP-1 resolution 1920x1080 position 0 0
@@ -298,7 +299,7 @@ no_focus [app_id="firefox" title="^$"]
 for_window [app_id="firefox" title="^$"] border none, floating enable, move position 85 ppt 90 ppt
 
 # workspace 3: chats
-assign [app_id="telegramdesktop"] workspace 3
+assign [app_id="org.telegram.desktop"] workspace 3
 assign [class="Slack"] workspace 3
 assign [class="Skype"] workspace 3
 assign [class="Microsoft Teams - Preview"] workspace 3
