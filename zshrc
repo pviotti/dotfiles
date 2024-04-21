@@ -37,6 +37,7 @@ source $ZSH/oh-my-zsh.sh
 export DOTNET_ROOT="/usr/share/dotnet"
 export GOPATH="/opt/go"
 export GOBIN="/opt/go/bin"
+export GOROOT="/usr/lib/go"
 export PATH="$PATH:~/.gem/ruby/2.7.0/bin:~/.dotnet/tools:~/.local/bin:$GOBIN"
 
 # Time format for ls
@@ -241,3 +242,5 @@ alias k="kubectl"
 
 # Reset laptop monitor - sometimes it gets stuck after suspend, unknown root cause
 alias screen-reset="swaymsg output eDP-1 disable; swaymsg output eDP-1 enable"
+
+eval "$(zoxide init --cmd cd zsh)"
