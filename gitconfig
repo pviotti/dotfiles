@@ -5,6 +5,7 @@
 
 [commit]
     gpgsign = true
+    verbose = true
 
 [color]
     ui = true
@@ -25,3 +26,19 @@
 
 [init]
 	defaultBranch = main
+
+[rebase]
+    autoSquash = true
+    autoStash = true
+
+[push]
+    autoSetupRemote = true
+
+[rerere]
+    enabled = true
+
+[diff]
+    algorithm = histogram
+
+[branch]
+	sort = -committerdate
