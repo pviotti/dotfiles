@@ -31,9 +31,9 @@ set $menu exec $term --title="launcher" bash -c 'compgen -c | sort -u | fzf | xa
 #output * bg /usr/share/backgrounds/sway/Sway_Wallpaper_Blue_1920x1080.png fill
 #
 # External screen
-#output DP-1 scale 1.6
-#output DP-1 resolution 3840x2160 position 0 0
-output DP-1 resolution 2560x1440 position 1920 0
+output DP-1 scale 1.2
+output DP-1 resolution 3840x2160 position 1920 0
+#output DP-1 resolution 2560x1440 position 1920 0
 #output DP-1 resolution 1920x1080 position 1920 0
 # Laptop screen
 # position x = external screen width / scale
