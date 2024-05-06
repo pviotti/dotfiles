@@ -200,7 +200,7 @@ fi
 autoload -U +X bashcompinit && bashcompinit
 
 # Azure cli autocompletion
-source /opt/azure-cli/az.completion
+source /opt/azure-cli/bin/az.completion.sh
 
 # Version managers: asdf and nvm
 #source $HOME/.asdf/asdf.sh
