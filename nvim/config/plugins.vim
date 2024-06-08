@@ -53,4 +53,6 @@ Plug 'fsharp/vim-fsharp', {
 
 Plug 'tpope/vim-surround'
 
+Plug 'christoomey/vim-tmux-navigator'
+
 call plug#end()
