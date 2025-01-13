@@ -14,3 +14,4 @@ The neovim configuration has been in part copied from [cedi/vim-config](https://
 
 In neovim run `:PlugInstall` to install its plugins.
 
+For Mac machines, run `install-mac.sh` as well.
