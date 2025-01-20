@@ -14,3 +14,13 @@ The neovim configuration has been in part copied from [cedi/vim-config](https://
 
 In neovim run `:PlugInstall` to install its plugins.
 
+## Other configurations
+
+- Add user to `video` group to allow for [`light`][light] execution
+```bash
+sudo gpasswd -a <username> video
+groups <username> # validation; need to log back in
+```
+
+
+ [light]: https://gitlab.com/dpeukert/light
