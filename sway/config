@@ -297,6 +297,9 @@ for_window [title="Firefox — Sharing Indicator"] no_focus
 no_focus [app_id="firefox" title="^$"]
 for_window [app_id="firefox" title="^$"] border none, floating enable, move position 85 ppt 90 ppt
 
+# Avoid Notion setting urgency flag for no reason
+for_window [class="Notion"] urgent disable
+
 # workspace 3: chats
 assign [app_id="org.telegram.desktop"] workspace 3
 assign [class="Slack"] workspace 3
