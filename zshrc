@@ -35,8 +35,8 @@ source $ZSH/oh-my-zsh.sh
 [ -f /usr/share/z/z.sh ] && source /usr/share/z/z.sh
 
 export DOTNET_ROOT="/usr/share/dotnet"
-export GOPATH="/opt/go"
-export GOBIN="/opt/go/bin"
+export GOPATH="$HOME/.go"
+export GOBIN="$HOME/.go/bin"
 export GOROOT="/usr/lib/go"
 export PATH="$PATH:~/.gem/ruby/2.7.0/bin:~/.dotnet/tools:~/.local/bin:$GOBIN"
 
@@ -239,6 +239,19 @@ sed -n "$line{N;p}" $cmd_db
 # k8s
 alias k="kubectl"
 [[ /usr/bin/kubectl ]] && source <(kubectl completion zsh)
+
+# llama
+oll() {
+  systemctl start ollama
+  sleep 1
+  if [ -n "$1" ]; then
+    echo "$1" | ollama run llama3.2:1b
+  else
+    ollama run llama3.2:1b
+  fi
+  systemctl stop ollama
+}
+
 
 # Reset laptop monitor - sometimes it gets stuck after suspend, unknown root cause
 alias screen-reset="swaymsg output eDP-1 disable; swaymsg output eDP-1 enable"
