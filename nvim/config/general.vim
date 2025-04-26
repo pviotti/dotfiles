@@ -5,7 +5,6 @@
 " enable utf-8 everywhere
 set encoding=utf-8
 set fileencoding=utf-8
-set termencoding=utf-8
 
 " make backspace works properly
 set backspace=2

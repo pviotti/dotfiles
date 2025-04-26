@@ -17,9 +17,6 @@ inoremap <C-@> <C-x><C-o>
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Function Keys
 
-" Easy switching between paste and normal insert mode
-set pastetoggle=<F2>
-
 " Open FileExplorrer
 noremap <silent> <F3> :NERDTreeToggle<CR>
 
