@@ -140,6 +140,14 @@ function videocompress () {
 	fi
 }
 
+function videocompress-folder () {
+    mkdir -p compressed
+    for f in $(ls *.mp4)
+    do
+        videocompress $f compressed/$f
+    done
+}
+
 # Reset USB - sometimes USB-C Hub gets unresponsive and external
 # keyboard and mouse stop working (see:
 # dmesg and
