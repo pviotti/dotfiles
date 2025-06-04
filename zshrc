@@ -32,6 +32,8 @@ export LANG=en_US.UTF-8
 
 source $ZSH/oh-my-zsh.sh
 
+source <(fzf --zsh)
+
 [ -f /usr/share/z/z.sh ] && source /usr/share/z/z.sh
 
 export DOTNET_ROOT="/usr/share/dotnet"
