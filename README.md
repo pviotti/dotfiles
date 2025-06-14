@@ -21,6 +21,10 @@ In neovim run `:PlugInstall` to install its plugins.
 sudo gpasswd -a <username> video
 groups <username> # validation; need to log back in
 ```
+- Firefox `userChrome.css` for some UI customization:
+```bash
+ln -s $(pwd)/firefox/userChrome.css ~/.mozilla/firefox/<profile-folder>/chrome/userChrome.css
+```
 
 
  [light]: https://gitlab.com/dpeukert/light
