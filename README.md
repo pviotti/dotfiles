@@ -21,7 +21,7 @@ Install GNU Stow (in Arch: `sudo pacman -S stow`).
    ```
 2. Run the installation script:
    ```bash
-   ./install-stow.sh
+   ./install.sh
    ```
 3. In neovim run `:PlugInstall` to install its plugins.
 
