@@ -252,14 +252,12 @@ alias k="kubectl"
 
 # llama
 oll() {
-  systemctl start ollama
-  sleep 1
+  model="llama3.2:3b"
   if [ -n "$1" ]; then
-    echo "$1" | ollama run llama3.2:1b
+    echo "$1" | ollama run "$model"
   else
-    ollama run llama3.2:1b
+    ollama run "$model"
   fi
-  systemctl stop ollama
 }
 
 

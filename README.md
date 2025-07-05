@@ -60,7 +60,7 @@ To uninstall all packages:
 sudo gpasswd -a <username> video
 groups <username> # validation; need to log back in
 ```
-- Firefox `userChrome.css` for some UI customization:
+- Firefox: `userChrome.css` for some UI customizations, and some bookmarklets:
 ```bash
 ln -s $(pwd)/firefox/userChrome.css ~/.mozilla/firefox/<profile-folder>/chrome/userChrome.css
 ```
