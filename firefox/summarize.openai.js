@@ -25,31 +25,38 @@
     if (banner) banner.remove();
   }
   
-  // === Step 1: Dynamically load Readability.js if not already loaded ===
-  if (typeof Readability === 'undefined') {
-    await new Promise((resolve, reject) => {
-      const script = document.createElement('script');
-      script.src = 'https://unpkg.com/@mozilla/readability@0.6.0/Readability.js';
-      script.onload = resolve;
-      script.onerror = reject;
-      document.head.appendChild(script);
-    });
+  // === Step 1: Try to extract article text using Readability.js ===
+
+  let articleText = null;
+  try {
+    if (typeof Readability === 'undefined') {
+      await new Promise((resolve, reject) => {
+        const script = document.createElement('script');
+        script.src = 'https://unpkg.com/@mozilla/readability@0.6.0/Readability.js';
+        script.onload = resolve;
+        script.onerror = reject;
+        document.head.appendChild(script);
+      });
+    }
+
+    const docClone = document.cloneNode(true);
+    const article = new Readability(docClone).parse();
+
+    if (article && article.textContent && article.textContent.length > 200) {
+      articleText = article.textContent.slice(0, MAX_CHARS);
+      console.log('✅ Used Readability for content extraction.');
+    } else {
+      throw new Error('Readability returned insufficient content.');
+    }
+  } catch (err) {
+    console.warn('⚠️ Readability failed, falling back to body text:', err.message);
+    articleText = document.body.innerText.slice(0, MAX_CHARS);
   }
 
- // === Step 2: Extract article content using Readability ===
-  const clonedDoc = document.cloneNode(true);
-  const article = new Readability(clonedDoc).parse();
-
-  if (!article || !article.textContent || article.textContent.length < 200) {
-    alert('❌ Readability could not extract a valid article.');
-    return;
-  }
-
-  const articleText = article.textContent.slice(0, MAX_CHARS);
 
   insertBanner('⏳ Summarizing article using OpenAI APIs...', true);
 
-  // === Step 3: Call OpenAI API ===
+  // === Step 2: Call OpenAI API ===
   const prompt = `${SUMMARIZATION_PROMPT}\n\n${articleText}`;
 
   let summaryText;
@@ -84,7 +91,7 @@
     return;
   }
 
-  // === Step 4: Show summary ===
+  // === Step 3: Show summary ===
   removeBanner();
   insertBanner(`📝 Summary:\n\n${summaryText}`, false);
 })();
