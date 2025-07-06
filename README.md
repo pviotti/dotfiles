@@ -1,7 +1,7 @@
 # dotfiles
 
 Configuration files for various tools I use on my Linux machines, for instance:
-zsh, neovim, tmux, git, kitty, gpg-agent, ranger and sway.
+zsh, neovim, tmux, git, kitty, gpg-agent, yazi and sway.
 
 ## Installation
 
