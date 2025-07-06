@@ -40,7 +40,7 @@ export DOTNET_ROOT="/usr/share/dotnet"
 export GOPATH="$HOME/.go"
 export GOBIN="$HOME/.go/bin"
 export GOROOT="/usr/lib/go"
-export PATH="$PATH:~/.gem/ruby/2.7.0/bin:~/.dotnet/tools:~/.local/bin:$GOBIN"
+export PATH="$PATH:$HOME/gem/ruby/2.7.0/bin:$HOME/.dotnet/tools:$HOME/.local/bin:$GOBIN"
 
 # Time format for ls
 export TIME_STYLE=long-iso
