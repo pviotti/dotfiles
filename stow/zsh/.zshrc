@@ -72,7 +72,7 @@ alias del='gio trash'
 alias o='xdg-open'
 alias l='ls --group-directories-first'
 alias fz='nvim `find . | fzf --height=10`'
-alias ra=ranger
+alias y=yazi
 alias cal='python -m calendar'
 alias -g grepi='| grep -i'
 lt() { ls -ltrsa "$@" | tail; }

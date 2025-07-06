@@ -17,7 +17,7 @@ for package in */; do
         package_name="${package%/}"
         
         # Check if the package is stowed (has symbolic links)
-        if stow -t "$HOME" -n "$package_name" 2>&1 | grep -q "would create"; then
+        if stow -t "$HOME" -n "$package_name" --verbose=1 2>&1 | grep -q "LINK"; then
             echo "❌ $package_name - Not installed"
         else
             echo "✅ $package_name - Installed"
