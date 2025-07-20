@@ -1,6 +1,5 @@
 #!/bin/bash
-# Minify the summarize.openai.js and summarize.ollama.js files
-# in order to use them as bookmarklets.
+# Minify the the javascript files in order to use them as bookmarklets.
 
 set -euo pipefail
 
@@ -12,34 +11,37 @@ if ! command -v terser &> /dev/null; then
 fi
 
 # Check if input files exist
-if [ ! -f "summarize.openai.js" ]; then
-    echo "Error: summarize.openai.js not found in current directory"
-    exit 1
-fi
-
-if [ ! -f "summarize.ollama.js" ]; then
-    echo "Error: summarize.ollama.js not found in current directory"
+if [ ! -f "summarize.openai.js" ] || [ ! -f "summarize.ollama.js" ] || [ ! -f "summarize.azureopenai.js" ]; then
+    echo "Error: one of the files not found in current directory"
     exit 1
 fi
 
 # Check if API key file exists
-if [ ! -f ".openai.key" ]; then
-    echo "Error: .openai.key file not found"
+if [ ! -f ".openai.key" ] || [ ! -f ".azureopenai.key" ]; then
+    echo "Error: one of the API key files not found"
     exit 1
 fi
 
 # Read API key from file
 OPENAI_API_KEY=$(cat .openai.key | tr -d '\n')
+AZURE_KEY=$(cat .azureopenai.key | tr -d '\n')
+AZURE_ENDPOINT=$(cat .azureopenai.endpoint.key | tr -d '\n')
 
-# Check if API key is not empty
-if [ -z "$OPENAI_API_KEY" ]; then
-    echo "Error: API key is empty in .openai.key file"
+# Check if API keys are not empty
+if [ -z "$OPENAI_API_KEY" ] || [ -z "$AZURE_KEY" ] || [ -z "$AZURE_ENDPOINT" ]; then
+    echo "Error: One or more required variables are empty (.openai.key, .azureopenai.key, or .azureopenai.endpoint.key)"
     exit 1
 fi
 
-echo "Minifying summarize.openai.js with API key..."
+echo "Minifying summarize.azureopenai.js with API key..."
+terser summarize.azureopenai.js \
+    --define "process.env.AZURE_KEY=\"$AZURE_KEY\"" \
+    --define "process.env.AZURE_ENDPOINT=\"$AZURE_ENDPOINT\"" \
+    --compress \
+    --mangle \
+    -o summarize.azureopenai.min.js
 
-# Minify with API key substitution
+echo "Minifying summarize.openai.js with API key..."
 terser summarize.openai.js \
     --define "process.env.OPENAI_API_KEY=\"$OPENAI_API_KEY\"" \
     --compress \
@@ -47,13 +49,12 @@ terser summarize.openai.js \
     -o summarize.openai.min.js
 
 echo "Minifying summarize.ollama.js..."
-
-# Minify without any environment variable replacement
 terser summarize.ollama.js \
     --compress \
     --mangle \
     -o summarize.ollama.min.js
 
 echo "Minification complete!"
+echo "- summarize.azureopenai.min.js (with API key embedded)"
 echo "- summarize.openai.min.js (with API key embedded)"
 echo "- summarize.ollama.min.js" 
