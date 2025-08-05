@@ -65,6 +65,7 @@ input "1739:30385:CUST0001:00_06CB:76B1_Touchpad" {
 input type:keyboard {
 	xkb_layout "ie,it"
 	xkb_options "grp:win_space_toggle"
+    xkb_numlock enabled
 }
 
 input type:mouse {
