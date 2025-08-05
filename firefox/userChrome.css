@@ -1,4 +1,3 @@
-/*
 // These are customization for Tree Style Tab extension,
 // which I don't use anymore since Firefox got native vertical tabs support.
 #main-window[tabsintitlebar="true"]:not([extradragspace="true"]) #TabsToolbar > .toolbar-items {
@@ -10,7 +9,7 @@
 }
 #sidebar-header {
   display: none;
-}*/
+}
 
 #tabbrowser-tabs[orient="vertical"] {
   & .tabbrowser-tab {
