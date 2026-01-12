@@ -260,6 +260,8 @@ oll() {
   fi
 }
 
+# gparted on sway
+alias gparted="pkexec env WAYLAND_DISPLAY=$WAYLAND_DISPLAY XDG_RUNTIME_DIR=$XDG_RUNTIME_DIR DISPLAY= gparted"
 
 # Reset laptop monitor - sometimes it gets stuck after suspend, unknown root cause
 alias screen-reset="swaymsg output eDP-1 disable; swaymsg output eDP-1 enable"
