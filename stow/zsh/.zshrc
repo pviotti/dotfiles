@@ -81,6 +81,7 @@ remove_lines_from() { grep -F -x -v -f $2 $1; } # removes lines from $1 if they 
 alias pp="ps axuf | pager"
 alias sum="xargs | tr ' ' '+' | bc" ## Usage: echo 1 2 3 | sum
 def() { sdcv $@ | fold }
+tempe() { cd "$(mktemp -d)" }
 e() { sayit "$@" 2>/dev/null }
 mcd() { mkdir $1 && cd $1; }
 i() { (head -5; tail -5) < "$1"; } #| column -t;
