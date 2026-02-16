@@ -2,7 +2,7 @@ javascript:(async () => {
   // === Configuration ===
   const AZURE_ENDPOINT = process.env.AZURE_ENDPOINT || '';
   const AZURE_KEY = process.env.AZURE_KEY || '';
-  const MAX_CHARS = 20000;
+  const MAX_CHARS = 30000;
   const PROMPT = "Summarize this article in a few bullet points (less than 10).";
 
   // === UI Helpers ===
@@ -70,9 +70,9 @@ javascript:(async () => {
           { role: "system", content: "You are a helpful assistant." },
           { role: "user", content: fullPrompt }
         ],
-        max_tokens: 512,
+        max_tokens: 10000,
         temperature: 0.5,
-        top_p: 1,
+        top_p: 0.2,
         frequency_penalty: 0,
         presence_penalty: 0,
         stop: null
