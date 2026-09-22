@@ -228,7 +228,7 @@ source /opt/azure-cli/bin/az.completion.sh
 #[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 
 # Bluetooth headset
-headset_mac="04:52:C7:E1:98:F3"
+headset_mac="14:06:A7:7B:C3:12"
 alias bton='echo "power on\nconnect $headset_mac" | bluetoothctl'
 alias btoff="bluetoothctl -- power off"
 
@@ -253,12 +253,14 @@ alias k="kubectl"
 
 # llama
 oll() {
-  model="llama3.2:3b"
+  #model="llama3.2:3b"
+  model="gemma4:e2b"
   if [ -n "$1" ]; then
-    echo "$1" | ollama run "$model"
+    echo "$1" | ollama run "$model" --think=false
   else
-    ollama run "$model"
+    ollama run "$model" --think=false
   fi
+  ollama stop "$model"
 }
 
 # gparted on sway
