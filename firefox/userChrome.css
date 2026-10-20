@@ -10,9 +10,13 @@
 #sidebar-header {
   display: none;
 }
+#sidebar-panel-header {
+  display: none;
+}
 
 #tabbrowser-tabs[orient="vertical"] {
   & .tabbrowser-tab {
     --tab-min-height: 22px !important;
   }
 }
+
