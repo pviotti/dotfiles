@@ -125,6 +125,14 @@ alias gti="git"
 setopt BRACE_CCL
 zstyle ':completion:*:*:vim:*:*files' ignored-patterns '*.beam'
 
+# History tricks
+setopt hist_ignore_space
+setopt hist_ignore_all_dups
+setopt HIST_FIND_NO_DUPS
+HISTFILE="$HOME/.zsh_history"
+HISTSIZE=10000000
+SAVEHIST=10000000
+
 # Turn research PDF articles into PDF readable by Kobo e-reader
 function kobo () {
 	if [ -f $1 ]; then
