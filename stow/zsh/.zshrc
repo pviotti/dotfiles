@@ -215,8 +215,10 @@ if [ "$vi_mode" = true ] ; then
     bindkey '^e' edit-command-line
 fi
 
-# enable bash autocompletion in zsh
+# Autocompletion
 autoload -U +X bashcompinit && bashcompinit
+autoload -Uz compinit
+compinit
 
 # Azure cli autocompletion
 source /opt/azure-cli/bin/az.completion.sh
